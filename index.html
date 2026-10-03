@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Format LinkedIn posts privately in your browser.">
+  <title>LinkedIn Post Formatter</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">in</span><span>LinkedIn Post Formatter</span></div>
+    <div class="privacy"><span class="status-dot"></span>Private · saved in this browser</div>
+  </header>
+
+  <main class="app-shell">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">CRISTIAN’S WRITING TOOLKIT</p>
+        <h1>Make your post ready to publish.</h1>
+        <p class="lede">Format the final version, preview the reading experience, and copy it to LinkedIn. Your text never leaves this browser.</p>
+      </div>
+      <div class="hero-actions"><button class="button ghost" id="clearButton">Clear saved post</button></div>
+    </section>
+
+    <div class="workspace">
+      <section class="panel editor-panel">
+        <div class="panel-heading"><div><span class="panel-kicker">01 / EDIT</span><h2>Your post</h2></div><span class="saved-label" id="savedLabel">Autosaved</span></div>
+        <div class="toolbar" role="toolbar" aria-label="Text formatting">
+          <button class="tool-button" data-format="bold" title="Bold selected text"><strong>B</strong></button>
+          <button class="tool-button" data-format="italic" title="Italic selected text"><em>I</em></button>
+          <button class="tool-button" data-format="underline" title="Underline selected text"><u>U</u></button>
+          <button class="tool-button" data-format="strike" title="Strikethrough selected text"><s>S</s></button>
+          <span class="divider"></span>
+          <button class="tool-button" id="bulletButton" title="Toggle bullets">•</button>
+          <button class="tool-button" id="numberButton" title="Toggle numbered list">1.</button>
+          <button class="tool-button" id="emojiButton" title="Insert emoji">☺</button>
+        </div>
+        <div class="emoji-popover" id="emojiPopover" hidden>
+          <input id="emojiSearch" type="search" placeholder="Search emojis…" aria-label="Search emojis">
+          <div class="emoji-list" id="emojiList"></div>
+        </div>
+        <textarea id="editor" spellcheck="true" placeholder="Paste your final LinkedIn post here…" aria-label="Post editor"></textarea>
+        <div class="editor-footer"><span id="characterCount">0 characters</span><span id="lineCount">0 lines</span></div>
+      </section>
+
+      <section class="panel preview-panel">
+        <div class="panel-heading"><div><span class="panel-kicker">02 / PREVIEW</span><h2>LinkedIn preview</h2></div><span class="preview-badge">Live</span></div>
+        <article class="linkedin-card">
+          <div class="profile-row"><div class="avatar">CL</div><div><strong>Cristian Llamas</strong><span>Building better ways of working with AI</span><small>Just now · 🌐</small></div><span class="more">•••</span></div>
+          <div class="post-content" id="preview"><p class="empty-state">Your preview will appear here.</p></div>
+          <div class="post-stats"><span>♡</span> Like <span>○</span> Comment <span>↗</span> Repost <span>➤</span> Send</div>
+        </article>
+        <div class="copy-row"><button class="button primary" id="copyButton">Copy formatted post</button><span id="copyStatus" role="status"></span></div>
+      </section>
+    </div>
+
+    <section class="tips"><div><span class="tip-icon">✦</span><strong>Formatting tip</strong><p>Select text in the editor, then use the toolbar. Bold, italic, underline and strikethrough are converted to LinkedIn-compatible Unicode characters.</p></div><div><span class="tip-icon">⌘</span><strong>Safe by design</strong><p>Your latest post is restored automatically when you reopen this page. No account, analytics or server-side storage.</p></div></section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
